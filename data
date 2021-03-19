@@ -1,0 +1,16 @@
+$name = Read-Host "name"
+ 
+$value = Read-Host "value"
+
+New-Item  C:\Users\marko\OneDrive\Desktop\powershell\file\files -Name "$name.txt" -Value "$value" | Out-Null
+
+Write-Host "finish" -ForegroundColor Green
+
+Invoke-Item "C:\Users\marko\OneDrive\Desktop\powershell\$name.txt"
+
+Write-Host "PLEASE DO NOT CLOSE WINDOW" -ForegroundColor Red
+
+Start-Sleep 15
+
+Remove-Item -Path "C:\Users\marko\OneDrive\Desktop\powershell\$name.txt" 
+
